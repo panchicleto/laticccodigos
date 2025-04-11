@@ -28,6 +28,10 @@ app.get("/status", (req, res) => {
   res.json({ code: accessCode, active: isActive, lastUpdate });
 });
 
+app.get("/status", (req, res) => {
+  console.log("Solicitud recibida para obtener estado"); // Log para verificar que la solicitud llega
+  res.json({ code: accessCode, active: isActive, lastUpdate });
+});
 // Control de encendido y apagado
 app.post("/power", (req, res) => {
   const { action } = req.body;
